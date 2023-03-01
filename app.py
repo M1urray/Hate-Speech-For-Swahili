@@ -11,7 +11,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 app = Flask(__name__)
 
 
-serve(app, host="0.0.0.0", port=8080)
+serve(app, host="0.0.0.0", port=5000)
 
 
 # Used in pickle pipeline on TF-IDF
