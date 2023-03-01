@@ -1,5 +1,6 @@
 import pickle
 import preprocessing
+from waitress import serve
 from eli5.lime import TextExplainer
 from flask import Flask, request, render_template
 from eli5.lime.samplers import MaskingTextSampler
@@ -9,8 +10,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 
-app.debug = False
-app.secret_key = "your_key"
+
+serve(app, host="0.0.0.0", port=8080)
 
 
 # Used in pickle pipeline on TF-IDF

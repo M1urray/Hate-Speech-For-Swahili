@@ -61,4 +61,5 @@ wcwidth==0.2.5
 Werkzeug==2.1.2
 wheel==0.36.2
 wordcloud==1.8.1
+waitress
 xgboost==1.1.1
