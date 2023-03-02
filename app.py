@@ -10,10 +10,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="127.0.0.1", port=8080)
-
 
 # Used in pickle pipeline on TF-IDF
 def dummy(token):
@@ -147,5 +143,5 @@ def predict():
         return render_template('index.html')
 
 
-if __name__ == "__main__":
-    app.run(debug=False)
+if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=8080)
