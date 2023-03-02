@@ -1,6 +1,5 @@
 import pickle
 import preprocessing
-from waitress import serve
 from eli5.lime import TextExplainer
 from flask import Flask, request, render_template
 from eli5.lime.samplers import MaskingTextSampler
