@@ -1,7 +1,7 @@
 import pickle
 import preprocessing
 from eli5.lime import TextExplainer
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template , jsonify
 from eli5.lime.samplers import MaskingTextSampler
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -140,6 +140,14 @@ def predict():
                                expla_text='Explanation', explain_top_2_preds=top_2_preds, wordclouds=wordcloud_descr)
     else:  # if page is reloaded the form_text array will be empty
         return render_template('index.html')
+
+@app.route('/api/predicts', methods=['POST'])
+def api_predict():
+    text = request.get_json()['text']
+    final_features = reading.clean_text(text)
+    output = model.predict([final_features])[0]
+    prediction = one_word_get_prediction_class_name(output)
+    return jsonify({'prediction': prediction})
 
 
 if __name__ == '__main__':
