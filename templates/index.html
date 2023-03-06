@@ -54,7 +54,7 @@
       </div>
 
       <!-- Main Input For Receiving Query to our ML -->
-      <form action="{{ url_for('predict')}}" method="post">
+      <form action="{{ url_for('predicts')}}" method="post">
         <input type="text" name="hate_speech_text_field" placeholder="Text in Question" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>

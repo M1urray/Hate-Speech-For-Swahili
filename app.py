@@ -141,7 +141,7 @@ def predict():
     else:  # if page is reloaded the form_text array will be empty
         return render_template('index.html')
 
-@app.route('/api/predicts', methods=['POST'])
+@app.route('/predicts', methods=['POST'])
 def api_predict():
     text = request.get_json()['text']
     final_features = reading.clean_text(text)

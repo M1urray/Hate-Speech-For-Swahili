@@ -1,7 +1,6 @@
 # pre-process and clean data
 import re
 import nltk
-nltk.download('stopwords')
 import string
 import pkg_resources
 from nltk.stem import *
