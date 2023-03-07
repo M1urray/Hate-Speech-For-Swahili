@@ -9,7 +9,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 
-
 # Used in pickle pipeline on TF-IDF
 def dummy(token):
     return token
@@ -150,6 +149,4 @@ def api_predict():
     return jsonify({'prediction': prediction})
 
 
-if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+
