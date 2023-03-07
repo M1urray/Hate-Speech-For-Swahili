@@ -9,6 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 
+
 # Used in pickle pipeline on TF-IDF
 def dummy(token):
     return token
@@ -64,8 +65,11 @@ def predict_prob(text):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
+@app.route('/application')
+def application():
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -148,5 +152,6 @@ def api_predict():
     prediction = one_word_get_prediction_class_name(output)
     return jsonify({'prediction': prediction})
 
-
+if __name__ == '__main__':
+    app.run(host='localhost',port=8080,debug=True)
 

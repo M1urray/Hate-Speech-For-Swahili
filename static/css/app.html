@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hate Speech Detection Web App</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="app.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <header>
+         <h1>Hate Speech Detection Web App</h1>
+      </header>
+      <main>
+         <section id="input-section">
+            <h2>Enter your text here</h2>
+            <form>
+               <textarea placeholder="Type your text here..."></textarea>
+               <button type="submit">Submit</button>
+            </form>
+         </section>
+         <section id="results-section">
+            <div class="result-box">
+               <h3>Hate Speech</h3>
+               <div class="result-bar hate-speech"></div>
+               <p>Prediction: <span class="prediction-label">Neither</span></p>
+               <p>Probability: <span class="probability">50%</span></p>
+            </div>
+            <div class="result-box">
+               <h3>Offensive Language</h3>
+               <div class="result-bar offensive-language"></div>
+               <p>Prediction: <span class="prediction-label">Offensive Language</span></p>
+               <p>Probability: <span class="probability">75%</span></p>
+            </div>
+            <div class="result-box">
+               {% if hate_speech_text %}
+               <!-- ADD PLOT TITLE + TOOLTIP TO EXPLAIN IT -->
+               <div class="list-inline">
+                 <h3 class="w3-text-teal"> {{ hate_speech_text }} <i class="fa fa-info-circle infopop-icon" data-toggle="tooltip" data-placement="right" title="A text might be part of more than one category, as some words may convey Hate Speech and Offensive Language at the same time."></i> </h3>
+               </div>
+             {% endif %}
+       
+             <div class="prediction_text">
+               <p> {{ pre_predict_text }} </p>
+               <p> {{ predict_text }} </p>
+               <p><strong> {{ prediction_text }} </strong></p>
+             </div>
+       
+             <!-- Another way to import HTML code {{ explain_top_2_preds|safe }} -->
+             {% if expla_text %}
+               <!-- ADD PLOT TITLE + TOOLTIP TO EXPLAIN IT -->
+               <div class="list-inline">
+                 <h3 class="w3-text-teal"> {{ expla_text }} <i class="fa fa-info-circle infopop-icon" data-toggle="tooltip" data-placement="right" title="The original text is cleaned, corrected and filtered from stop words, thus less words appear in the explanation. The highlighted words represent their importance in the prediction of a specific label. Explanation is generated using the LIME algorithm - used for Black-Box classifier interpretation."></i> </h3>
+               </div>
+             {{ explain_top_2_preds }}
+             {% endif %}
+            </div>
+
+         </section>
+         <section id="tips-section">
+            <h2>Tips and Suggestions</h2>
+            <p>Here are some tips and suggestions to help you create content that complies with community guidelines:</p>
+            <ul>
+               <li>Use respectful language and avoid derogatory terms or slurs.</li>
+               <li>Avoid personal attacks or insults directed at individuals or groups.</li>
+               <li>Be mindful of cultural sensitivities and avoid offensive stereotypes or generalizations.</li>
+            </ul>
+            <p>For more information and support, check out these resources:</p>
+            <ul>
+               <li><a href="#">Community Guidelines</a></li>
+               <li><a href="#">Reporting Hate Speech and Offensive Language</a></li>
+               <li><a href="#">Support and Resources</a></li>
+            </ul>
+         </section>
+      </main>
+   </body>
+   <footer>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="/index.html">Home</a></li>
+      </ul>
+    </footer>
+</html>

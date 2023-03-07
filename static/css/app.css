@@ -1,0 +1,164 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+  
+  /* Main styles */
+  main {
+    margin: 20px;
+  }
+  
+  /* Input section styles */
+  #input-section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  textarea {
+    height: 120px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Results section styles */
+  #results-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .result-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 0 5px #ccc;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  
+  .result-bar {
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .hate-speech {
+    background-color: #f44336;
+  }
+  
+  .offensive-language {
+    background-color: #FF9800;
+  }
+  
+  .neither {
+    background-color: #4CAF50;
+  }
+  
+  .prediction-label {
+    font-weight: bold;
+  }
+  
+  .probability {
+    font-style: italic;
+  }
+  
+  /* Tips section styles */
+  #tips-section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px #ccc;
+  }
+  
+  #tips-section h2 {
+    margin-top: 0;
+  }
+  
+  ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+  }
+  
+  footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  footer ul a{
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
